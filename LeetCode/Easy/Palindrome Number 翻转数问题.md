@@ -1,8 +1,11 @@
 # 翻转数问题
+
 判断一个数，若将其顺序完全倒转，判断翻转结果是否与倒转前一致。<br>
 返回一个 boolean 类型值；<br>
  若输入为负数，则直接判断 false。<br>
+
 ## 1. 自己写的版本
+
 ```java
 class Solution {
     public boolean isPalindrome(int x) {
@@ -46,16 +49,21 @@ class Solution {
     }
 }
 ```
+
 ## 2. 存在的问题
+
 1. 对于这类，重点在于字符而不在值大小的问题，应将 x 转为字符串求解；
 2. 求数列长度可以直接使用 String 类下的 valueof 方法，不需要自我实现；
+
 ```java
 String str = String.valurof(x);
 int end = str.length() - 1;
 ```
+
 3. 根本不需要创建两个数组来分别存储正序倒序的值，直接在 x 转为字符串的基础上，每一步都进行相应字符位置的比较即可；
 
 ## 3. 优良版本
+
 ```java
 public boolean isPalindrome(int x) {
     String str = String.valueOf(x);
@@ -67,3 +75,4 @@ public boolean isPalindrome(int x) {
     return true;
 }
 ```
+
