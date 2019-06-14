@@ -26,7 +26,22 @@ class Solution {
 
 ```java
 class Solution{
+    public int removeElement(int[] nums, int val) {
+    int i = 0;
+    int n = nums.length;
+    while (i < n) {
+        if (nums[i] == val) {
+            nums[i] = nums[n - 1];
+            // reduce array size by one
+            n--;
+        } else {       //因为不能确认数列末尾值是否为目标值，因此移动一次之后还要判断一次移动后的值是否为目标值
+            i++;
+        }
+    }
+    return n;
 }
+}
+
 
 ```
 
